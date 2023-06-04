@@ -35,9 +35,6 @@ class AddFruitFragment(
 
 
 
-
-
-
         return view
     }
 
@@ -50,7 +47,19 @@ class AddFruitFragment(
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==47 && resultCode==Activity.RESULT_OK){}
+        if(requestCode==47 && resultCode==Activity.RESULT_OK){
+            //vérifier si les données sont nulles
+            if(data==null || data.data==null)return
+
+            //recuperer l'image
+            val selectedImage=data.data
+
+            //mettre à jour
+
+
+
+
+        }
     }
 
 
