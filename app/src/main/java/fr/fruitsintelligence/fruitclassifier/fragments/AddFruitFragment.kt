@@ -30,10 +30,24 @@ class AddFruitFragment(
         //recuperation du boutton
         val pickupImageButton = view?.findViewById<Button>(R.id.upload_button)
 
+        //lorsqu'on clique dessus
+        pickupImageButton?.setOnClickListener{pickupImage()}
+
+
+
+
 
 
         return view
     }
+
+    private fun pickupImage() {
+        val intent=Intent()
+        intent.type="image/"
+        intent.action=Intent.ACTION_GET_CONTENT
+    }
+
+
 
 
 

@@ -1,16 +1,32 @@
-package fr.fruitsintelligence.fruitclassifier
+package fr.fruitsintelligence.fruitclassifier.fragments
 
+import android.net.Uri
+import com.google.android.gms.tasks.Continuation
+import com.google.android.gms.tasks.Task
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import fr.fruitsintelligence.fruitclassifier.FruitRepository.Singleton.databaseRef
-import fr.fruitsintelligence.fruitclassifier.FruitRepository.Singleton.fruitList
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.UploadTask
+import fr.fruitsintelligence.fruitclassifier.FruitModel
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.databaseRef
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.fruitList
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.storageReference
+import java.util.UUID
 
 class FruitRepository {
 
 
     object Singleton {
+
+        // donner le ien pour acceder au bucket
+        private val BUCKET_URL: String="gs://fruitclassifier-80543.appspot.com"
+
+        //se connecter à l'espace de stockage
+        val storageReference=FirebaseStorage.getInstance().getReferenceFromUrl(BUCKET_URL)
+
+
         //se connecter à la référence Fruits
 
         val databaseRef = FirebaseDatabase.getInstance().getReference("fruits")
@@ -41,7 +57,7 @@ class FruitRepository {
                         fruitList.add(fruit) }
                 }
                 //actionner le callback
-                 callback()
+                callback()
             }
 
             override fun onCancelled(error: DatabaseError) {}
@@ -50,6 +66,8 @@ class FruitRepository {
         })
 
     }
+
+
 
     //mettre à jour objet fruit en repo
 
@@ -60,6 +78,6 @@ class FruitRepository {
 
 
     //supprimer un fruit de la base
-    fun deleteFruit(fruit:FruitModel)= databaseRef.child(fruit.id).removeValue()
+    fun deleteFruit(fruit: FruitModel)= databaseRef.child(fruit.id).removeValue()
 
 }

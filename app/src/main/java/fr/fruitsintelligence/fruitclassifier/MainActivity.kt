@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import fr.fruitsintelligence.fruitclassifier.fragments.AddFruitFragment
 import fr.fruitsintelligence.fruitclassifier.fragments.CollectionFragment
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository
 import fr.fruitsintelligence.fruitclassifier.fragments.HomeFragment
 import fr.fruitsintelligence.fruitclassifier.ui.theme.FruitClassifierTheme
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //charger fruiRepository
-        val repo=FruitRepository()
+        val repo= FruitRepository()
 
         //mettre à jour la liste de fruits
         repo.updateData{

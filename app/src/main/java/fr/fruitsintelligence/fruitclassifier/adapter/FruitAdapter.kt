@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.fruitsintelligence.fruitclassifier.FruitModel
 import fr.fruitsintelligence.fruitclassifier.FruitPopup
-import fr.fruitsintelligence.fruitclassifier.FruitRepository
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository
 import fr.fruitsintelligence.fruitclassifier.MainActivity
 import fr.fruitsintelligence.fruitclassifier.R
 

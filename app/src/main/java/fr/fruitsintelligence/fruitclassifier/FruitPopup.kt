@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import fr.fruitsintelligence.fruitclassifier.adapter.FruitAdapter
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository
 
 class FruitPopup(
     private val adapter: FruitAdapter,
@@ -52,7 +53,7 @@ class FruitPopup(
 
         likeButton.setOnClickListener{
             currentFruit.liked=!currentFruit.liked
-            val repo=FruitRepository()
+            val repo= FruitRepository()
             repo.updateFruit(currentFruit)
             updateLike(likeButton)
         }

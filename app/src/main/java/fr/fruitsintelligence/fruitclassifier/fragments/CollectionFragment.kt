@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import fr.fruitsintelligence.fruitclassifier.FruitRepository.Singleton.fruitList
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.fruitList
 import fr.fruitsintelligence.fruitclassifier.MainActivity
 import fr.fruitsintelligence.fruitclassifier.R
 import fr.fruitsintelligence.fruitclassifier.adapter.FruitAdapter
