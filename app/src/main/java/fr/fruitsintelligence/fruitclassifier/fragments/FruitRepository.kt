@@ -68,6 +68,14 @@ class FruitRepository {
     }
 
 
+    //créer une fonction pour envoyer des fichiers sur le storage
+    fun uploadImage(file:Uri)
+    {
+        //vérifier que le fichier n'est pas null
+
+    }
+
+
 
     //mettre à jour objet fruit en repo
 
