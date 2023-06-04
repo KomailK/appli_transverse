@@ -2,21 +2,25 @@ package fr.fruitsintelligence.fruitclassifier.fragments
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import fr.fruitsintelligence.fruitclassifier.MainActivity
 import fr.fruitsintelligence.fruitclassifier.R
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.downloadUri
 
 class AddFruitFragment(
     private val context : MainActivity
 ): Fragment(){
 
 
+    private var file:Uri?=null
     private var uploadedImage:ImageView?=null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,7 +28,6 @@ class AddFruitFragment(
 
 
         //recuperer upload image
-
         uploadedImage=view?.findViewById(R.id.preview3_image)
 
         //recuperation du boutton
@@ -33,9 +36,33 @@ class AddFruitFragment(
         //lorsqu'on clique dessus
         pickupImageButton?.setOnClickListener{pickupImage()}
 
+        //récupérer le boutton confirmer
+        val confirmButton=view?.findViewById<Button>(R.id.confirm_button)
+        confirmButton?.setOnClickListener{sendForm(view)}
+
+
 
 
         return view
+    }
+
+    private fun sendForm(view: View) {
+        val repo=FruitRepository()
+        repo.uploadImage(file!!)
+        {
+            val fruitName=view.findViewById<EditText>(R.id.name_input).text.toString()
+            val fruitDescription=view.findViewById<EditText>(R.id.description_input).text.toString()
+            val fruitCalories=view.findViewById<EditText>(R.id.calorie_input).text.toString()
+            val fruitRecettes=view.findViewById<EditText>(R.id.recettes_input).text.toString()
+            val downloadImageUrl= downloadUri
+
+
+
+
+
+
+        }
+
     }
 
     private fun pickupImage() {
@@ -52,10 +79,13 @@ class AddFruitFragment(
             if(data==null || data.data==null)return
 
             //recuperer l'image
-            val selectedImage=data.data
+            file=data.data
 
             //mettre à jour
-            uploadedImage?.setImageURI(selectedImage)
+            uploadedImage?.setImageURI(file)
+
+
+
 
 
 

@@ -11,6 +11,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import fr.fruitsintelligence.fruitclassifier.FruitModel
 import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.databaseRef
+import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.downloadUri
 import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.fruitList
 import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.storageReference
 import java.util.UUID
@@ -26,15 +27,15 @@ class FruitRepository {
         //se connecter à l'espace de stockage
         val storageReference=FirebaseStorage.getInstance().getReferenceFromUrl(BUCKET_URL)
 
-
         //se connecter à la référence Fruits
-
         val databaseRef = FirebaseDatabase.getInstance().getReference("fruits")
 
 
         //créer une liste qui va contenir nos fruits
-
         val fruitList = arrayListOf<FruitModel>()
+
+        //contenir le lien de l'image courante
+        var downloadUri:Uri?=null
 
 
     }
@@ -69,7 +70,7 @@ class FruitRepository {
 
 
     //créer une fonction pour envoyer des fichiers sur le storage
-    fun uploadImage(file:Uri)
+    fun uploadImage(file:Uri,callback: () -> Unit)
     {
         //vérifier que le fichier n'est pas null
         if(file!==null)
@@ -94,8 +95,8 @@ class FruitRepository {
                 if(task.isSuccessful)
                 {
                     //recuperer l'image
-                        val downloadURI=task.result
-
+                        downloadUri=task.result
+                        callback()
 
 
                 }
