@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import fr.fruitsintelligence.fruitclassifier.fragments.AddFruitFragment
+import fr.fruitsintelligence.fruitclassifier.fragments.CollectionFragment
 import fr.fruitsintelligence.fruitclassifier.fragments.HomeFragment
 import fr.fruitsintelligence.fruitclassifier.ui.theme.FruitClassifierTheme
 
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         repo.updateData{
             //injecter le fragment dans notre boite (fragment_container)
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container,HomeFragment(this))
+            transaction.replace(R.id.fragment_container,AddFruitFragment(this))
             transaction.addToBackStack(null)
             transaction.commit()
         }

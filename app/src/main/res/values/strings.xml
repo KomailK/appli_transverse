@@ -22,9 +22,10 @@
     <!-- Page d'Ajout de fruits -->
     <string name="add_fruit_page_title">Ajout d\'un fruit</string>
     <string name="add_fruit_page_upload_button">Charger Image</string>
-    <string name="add_fruit_page_name_input">@string/fruit_name_i</string>
-    <string name="add_fruit_page_description_input">@string/fruit_description_i</string>
-    <string name="add_fruit_page_calorie_input">Nombre de calorie</string>
+    <string name="add_fruit_page_name_input">Nom du fruit</string>
+    <string name="add_fruit_page_description_input">Description du fruit</string>
+    <string name="add_fruit_page_calorie_input">Nombre de calories</string>
+    <string name="add_fruit_page_recettes_input">Recettes possible</string>
 
 
     <string name="add_fruit_page_confirm_button">Confirmer </string>
