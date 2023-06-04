@@ -45,6 +45,12 @@ class AddFruitFragment(
         val intent=Intent()
         intent.type="image/"
         intent.action=Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent,"Select Picture"),47)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==47 && resultCode==Activity.RESULT_OK){}
     }
 
 
