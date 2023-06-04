@@ -111,10 +111,10 @@ class FruitRepository {
 
     //mettre à jour objet fruit en repo
 
-    fun updateFruit(fruit: FruitModel) {
-        databaseRef.child(fruit.id).setValue(fruit)
+    fun updateFruit(fruit: FruitModel)=databaseRef.child(fruit.id).setValue(fruit)
 
-    }
+    //insérer new objet fruit en bdd
+    fun insertFruit(fruit: FruitModel)=databaseRef.child(fruit.id).setValue(fruit)
 
 
     //supprimer un fruit de la base

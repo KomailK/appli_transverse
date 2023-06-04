@@ -7,9 +7,10 @@ class FruitModel (
         val name: String="Mandarine",
         val description: String="Petite description",
         val imageUrl: String="http://graven.yt/plante.jpg",
-        var liked: Boolean = false,
+        val recettes: String="Recettes possibles",
         val calories: String="0",
-        val recettes: String="Recettes possibles"
+        var liked: Boolean = false
+
 
 
 

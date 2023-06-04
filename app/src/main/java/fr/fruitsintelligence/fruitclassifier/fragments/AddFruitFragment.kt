@@ -11,9 +11,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import fr.fruitsintelligence.fruitclassifier.FruitModel
 import fr.fruitsintelligence.fruitclassifier.MainActivity
 import fr.fruitsintelligence.fruitclassifier.R
 import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository.Singleton.downloadUri
+import java.util.UUID
 
 class AddFruitFragment(
     private val context : MainActivity
@@ -56,6 +58,17 @@ class AddFruitFragment(
             val fruitRecettes=view.findViewById<EditText>(R.id.recettes_input).text.toString()
             val downloadImageUrl= downloadUri
 
+            val fruit= FruitModel(
+                UUID.randomUUID().toString(),
+                fruitName,
+                fruitDescription,
+                downloadImageUrl.toString(),
+                fruitRecettes,
+                fruitCalories
+            )
+
+            //envoyer en bdd
+            repo.insertFruit(fruit)
 
 
 
