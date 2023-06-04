@@ -19,7 +19,7 @@
 
 
     <ImageView
-        android:id="@+id/preview2_image"
+        android:id="@+id/preview3_image"
         android:layout_width="39dp"
         android:layout_height="42dp"
         android:scaleType="centerCrop"

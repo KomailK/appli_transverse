@@ -25,7 +25,7 @@ class AddFruitFragment(
 
         //recuperer upload image
 
-        uploadedImage=view?.findViewById(R.id.preview2_image)
+        uploadedImage=view?.findViewById(R.id.preview3_image)
 
         //recuperation du boutton
         val pickupImageButton = view?.findViewById<Button>(R.id.upload_button)
@@ -55,6 +55,7 @@ class AddFruitFragment(
             val selectedImage=data.data
 
             //mettre à jour
+            uploadedImage?.setImageURI(selectedImage)
 
 
 
