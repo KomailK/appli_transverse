@@ -38,6 +38,8 @@
         <item name="fontFamily">@fond/kanit</item>
     </style> -->
 
+
+
     <!-- personnaliser la barre de navigation-->
     <style name="BottomNavigationTheme" parent="Widget.Design.BottomNavigationView">
 

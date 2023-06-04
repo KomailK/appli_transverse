@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import fr.fruitsintelligence.fruitclassifier.fragments.AddFruitFragment
 import fr.fruitsintelligence.fruitclassifier.fragments.CollectionFragment
 import fr.fruitsintelligence.fruitclassifier.fragments.FruitRepository
@@ -22,7 +24,38 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //importer la barre de navigation
+        val navigationView=findViewById<BottomNavigationView>(R.id.navigation_view)
+        navigationView.setOnNavigationItemSelectedListener {
+            when(it.itemId)
+            {
+                R.id.home_page->{
+                    loadFragment(HomeFragment(context = this))
+                    return@setOnNavigationItemSelectedListener true
+                }
 
+                R.id.collection_page->{
+                    loadFragment(CollectionFragment(context = this))
+                    return@setOnNavigationItemSelectedListener true
+                }
+
+                R.id.add_fruit_page->{
+                    loadFragment(AddFruitFragment(context = this))
+                    return@setOnNavigationItemSelectedListener true
+                }
+
+                else -> false
+            }
+        }
+
+        loadFragment(HomeFragment(context = this))
+
+
+
+
+    }
+
+    private fun loadFragment(fragment: Fragment) {
         //charger fruiRepository
         val repo= FruitRepository()
 
@@ -30,12 +63,10 @@ class MainActivity : AppCompatActivity() {
         repo.updateData{
             //injecter le fragment dans notre boite (fragment_container)
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container,CollectionFragment(this))
+            transaction.replace(R.id.fragment_container,fragment)
             transaction.addToBackStack(null)
             transaction.commit()
         }
-
-
 
 
 
