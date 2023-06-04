@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Fruit Classifier</string>
+
+    <string name="bottom_home_item">Accueil</string>
+    <string name="bottom_scann_item">Scanner</string>
+    <string name="bottom_Collection_page">Collection</string>
+    <string name="bottom_add_fruit_item">Ajouter</string>
+
+
+
+    <!-- Page d'accueil -->
+
+    <string name="home_page_title">A découvrir</string>
+    <string name="home_page_last_fruit_section">Derniers fruits ajoutés</string>
+
+
+    <!-- Page de Collection -->
+    <string name="collection_page_title">Ma collection</string>
+
+
+
+    <!-- Page d'Ajout de fruits -->
+    <string name="add_fruit_page_title">Ajout d\'un fruit</string>
+    <string name="add_fruit_page_upload_button">Charger Image</string>
+    <string name="add_fruit_page_name_input">@string/fruit_name_i</string>
+    <string name="add_fruit_page_description_input">@string/fruit_description_i</string>
+    <string name="add_fruit_page_calorie_input">Nombre de calorie</string>
+
+
+    <string name="add_fruit_page_confirm_button">Confirmer </string>
+
+
+    <!-- Fenetre Popup de details-->
+    <string name="popup_fruit_name">Nom du fruit</string>
+    <string name="popup_fruit_description">Description du fruit</string>
+    <string name="popup_fruit_description_subtitle">Petite Description du fruit</string>
+    <string name="popup_fruit_calorie_title">Nombre de calories</string>
+    <string name="popup_fruit_calorie_subtitle">0 Calorie</string>
+    <string name="popup_fruit_recette_title">Recettes possibles</string>
+    <string name="popup_fruit_recette_subtitle">Description des recettes</string>
+
+
+
+    <!-- Fruit customiser -->
+    <string name="fruit_name_i">Nom du fruit</string>
+    <string name="fruit_description_i">Description du fruit</string>
+
+
+
+    <!-- page de collection -->
+
+    <string name="fonctionnalités1">Découvrir votre fruit</string>
+    <string name="fonctionnalités2">Voir la collection de fruits</string>
+    <string name="fonctionnalités3">Scanner votre fruit</string>
+
+
+
+
+</resources>

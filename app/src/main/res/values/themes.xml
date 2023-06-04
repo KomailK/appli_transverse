@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Theme.FruitClassifier" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Primary brand color -->
+        <item name="colorPrimary"> @color/beige</item>
+
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary"> @color/green</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/black</item>
+        <!-- Customize your theme here -->
+    </style>
+
+    <!-- Créer le composant pour le titre par defaut -->
+    <style name="DefautTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@fond/kanit</item>
+    </style>
+
+    <!-- Créer le composant pour le sous titre par defaut -->
+    <style name="SubtitleTextStyle" parent="DefautTextStyle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Créer le composant pour le titre par defaut -->
+    <style name="TitleTextStyle" parent="SubtitleTextStyle">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
+    <!-- Créer un style pour le bottom navigation view
+    <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
+    <item name="android:textSize" >18sp</item>
+        <item name="fontFamily">@fond/kanit</item>
+    </style> -->
+
+    <!-- personnaliser la barre de navigation-->
+    <style name="BottomNavigationTheme" parent="Widget.Design.BottomNavigationView">
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@fond/kanit</item>
+
+
+    </style>
+
+
+
+
+
+
+
+
+</resources>
