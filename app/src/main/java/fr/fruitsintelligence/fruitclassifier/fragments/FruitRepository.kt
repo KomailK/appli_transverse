@@ -72,6 +72,26 @@ class FruitRepository {
     fun uploadImage(file:Uri)
     {
         //vérifier que le fichier n'est pas null
+        if(file!==null)
+        {
+            val fileName=UUID.randomUUID().toString()+".jpg"
+            val ref= storageReference.child(fileName)
+            val uploadTask=ref.putFile(file)
+
+
+
+            //démarrer la tache d'envoi
+            uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot,Task<Uri>>{task ->
+                //si pb lors de l'envoi du fichier
+                if(!task.isSuccessful){
+                    task.exception.let { throw it!! }
+                }
+                return@Continuation ref.downloadUrl
+
+
+            })
+
+        }
 
     }
 
