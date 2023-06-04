@@ -89,7 +89,18 @@ class FruitRepository {
                 return@Continuation ref.downloadUrl
 
 
-            })
+            }).addOnCompleteListener { task ->
+                //vérifiern si tout a bien fonctionné
+                if(task.isSuccessful)
+                {
+                    //recuperer l'image
+                        val downloadURI=task.result
+
+
+
+                }
+
+            }
 
         }
 
