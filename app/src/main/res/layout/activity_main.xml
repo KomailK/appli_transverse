@@ -8,28 +8,27 @@
 
 
 
-
-
-        <TextView
-            android:id="@+id/app_title"
-            style="@style/DefautTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/default_margin"
-            android:layout_marginTop="@dimen/default_margin"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/app_name"/>
-
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="#EEEEEE"
+            tools:ignore="MissingConstraints">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logo_fruitclassifier" />
+        </androidx.appcompat.widget.Toolbar>
 
         <TextView
             android:id="@+id/page_title"
             style="@style/TitleTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
             android:text="@string/home_page_title"
-            app:layout_constraintStart_toStartOf="@+id/app_title"
-            app:layout_constraintTop_toBottomOf="@+id/app_title" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 
         <FrameLayout
@@ -45,7 +44,7 @@
             android:id="@+id/navigation_view"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@color/light_green"
+            android:background="@color/yellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
